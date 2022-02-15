@@ -1,0 +1,125 @@
+<mat-toolbar class="bg-white mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+
+    <div class="w-75 row bg-transparent" style="position: absolute;margin-top: 230px;z-index: 1000;margin-left: 20%;">
+        <div class="col-lg-1 offset-lg-11 d-lg-block d-none">
+            <img class="avatar mat-elevation-z8 my-2" src="../../../assets/user.jpg"  style="width: 50px;height: 50px;"/>
+        </div>
+    </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+
+        <mat-divider class="bg-danger"></mat-divider>
+
+        <button routerLink="/dashboard" type="button" id="btn" class="btn my-2 menu-button text-white" data-bs-toggle="tooltip" title="Dashboard">
+            <span class="material-icons">home</span>
+        </button>
+
+        <button routerLink="/tickets" type="button" id="btn" class="btn my-2 menu-button text-white" data-bs-toggle="tooltip" title="Tickets">
+          <span class="material-icons">receipt</span>
+        </button>
+
+        <button type="button" id="btn" class="btn my-2 menu-button text-white" data-bs-toggle="tooltip" title="Contacts">
+            <span class="material-icons">perm_contact_calendar</span>
+        </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+            <div class="w-100 mt-5 h2" style="top: 0 !important;" >
+                <div class="p-5 row w-100 mx-0">
+
+                    <span class="h5 text-center col-lg-2">Sorted by:</span>
+
+                    <div class="p-0 card border-0 card2 col-lg-3" style="cursor: pointer;">
+                        <div class="bg-primary text-center shadow border-0 card-header" id="header2" style="display: flex;">
+                            <button class="btn text-white center h-100 w-75" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                <input type="button" class="mx-5 border-0 text-white" style="background-color: transparent;" [(ngModel)]="trigger">
+                            </button>
+                            <div class=" h-100 w-25" style="border-radius: 12px;">
+                                <mat-icon>arrow_drop_down_circle</mat-icon>
+                            </div>
+                        </div>
+                        <div class="card-body d-none opacity-0">
+                            <div class="row" *ngFor="let sousdata of dataTickets">
+                                <button type="button" class="btn text-center" (click)="getValue(sousdata)" >
+                                    {{ sousdata }}
+                                </button>
+                              </div>
+                        </div>
+                    </div>
+
+                    <div class="p-0 mx-5 card border-0 card2 col-lg-3">
+                        <div class="text-center shadow border-1 card-header" id="header2" style="display: flex;">
+                            <mat-icon class="h2">search</mat-icon>
+                            <input class="form-control rounded p-2 mx-2" type="search" [(ngModel)]="trigger" placeholder="Enter Search" id="example-search-input">
+                        </div>
+                        <div class="card-body d-none opacity-0">
+                            <div class="row" *ngFor="let sousdata of dataTickets">
+                                <button (click)="getValue(sousdata)" type="button" class="btn text-center">
+                                    {{ sousdata}}
+                                </button>
+                              </div>
+
+                        </div>
+                    </div>
+
+                    <div class="offset-lg-1 col-lg-2" id="exempleAccordeon">
+                        <button class="btn btn-primary shadow">Create a Ticket</button>
+                    </div>
+                </div>
+            </div>
+
+            <input type="submit" disabled class="h3 mx-4" [(value)]="trigger" style="color: rgb(36, 36, 36);font-size: 16px;background: transparent;border: none;" />
+            
+            <div *ngFor="let item of myDataTickets(allDataTickets, trigger)">
+                <a href="/monitoring/{{ item?.custom_fields?.cf_seriennumer_device }}">
+                <div class="h5 row p-2 mx-4 rounded ticketLine" style="border:1px solid rgb(173, 173, 173);">
+                        <div class="col-lg-3">
+                            <span class="span1">Trigger:</span>
+                            <span class="mx-2 span2">
+                                {{ item?.custom_fields?.cf_trigger }}
+                            </span>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <span class="span1">id_ticket:</span>
+                            <span class="mx-2 span2">
+                                {{ item?.id }}
+                            </span>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <span class="span1">Device:</span>
+                            <span class="mx-2 span2">
+                                {{ item?.custom_fields?.cf_seriennumer_device}}
+                            </span>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <span class="span1">Created_at:</span>
+                            <span class="mx-2 span2">
+                                {{ item?.created_at }}
+                            </span>
+                        </div>
+                </div>
+                </a>
+            </div>
+
+
+            <div class="container row w-100" style="display: flex;flex-direction: row;align-items: center;justify-content: space-between;">
+
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+

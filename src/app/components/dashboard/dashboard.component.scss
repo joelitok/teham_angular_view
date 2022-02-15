@@ -1,0 +1,87 @@
+mat-toolbar {
+    background: #004a9f;
+    color: white;
+}
+
+mat-sidenav {
+    margin: 16px;
+    width: 200px;
+    border-right: none;
+    background: #002b5c;
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.content {
+    height: calc(100vh - 98px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    color: lightgray;
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 65px);
+}
+
+.avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.name {
+    margin-top: 8px;
+    font-weight: normal;
+}
+
+.designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: lightgrey;
+}
+
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.child{
+    border: 2px solid white;
+    background: linear-gradient(to left, rgb(24, 124, 255), rgb(0, 98, 245));
+    cursor: pointer;
+    padding: 3px;
+}
+#btn{
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 0 !important;
+    transition: 1s;
+    span{
+        color: rgb(34, 34, 34);
+        font-size: 50px;
+        transition: 1s;
+    }
+
+    &:hover{
+        span{
+            color: rgb(255, 255, 255);
+            transition: 1s;
+        }
+        transition: 1s;
+    }
+}

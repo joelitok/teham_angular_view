@@ -1,0 +1,70 @@
+<mat-toolbar class="bg-white mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+
+    <div class="w-75 row bg-transparent" style="position: absolute;margin-top: 200px;z-index: 1000;margin-left: 20%;">
+        <div class="col-lg-1 offset-lg-11 d-lg-block d-none">
+            <img class="avatar mat-elevation-z8 my-2" src="../../../assets/user.jpg"  style="width: 50px;height: 50px;"/>
+        </div>
+    </div>
+    
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+
+        <mat-divider class="bg-danger"></mat-divider>
+
+        <button routerLink="/dashboard" type="button" id="btn" class="btn my-2 menu-button text-white" data-bs-toggle="tooltip" title="Dashboard">
+            <span class="material-icons">home</span>
+        </button>
+
+        <button routerLink="/tickets" type="button" id="btn" class="btn my-2 menu-button text-white" data-bs-toggle="tooltip" title="Tickets">
+          <span class="material-icons">receipt</span>
+        </button>
+
+        <button type="button" id="btn" class="btn my-2 menu-button text-white" data-bs-toggle="tooltip" title="Contacts">
+            <span class="material-icons">perm_contact_calendar</span>
+        </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+            <div class="text-dark mt-5 h2 text-center" style="position: absolute;top: 0 !important;"><span>Dashboard</span></div>
+
+            
+
+            <div class="text-secondary h3 text-center" style="margin-top: -150px !important;position: absolute;"><span>Workflow</span></div>
+
+            <div class="container row w-100 bg-white shadow p-0" style="height: 40px;">
+
+                <div class="h5 child h-100 text-center bg-primary col-12 col-lg-2 rounded">
+                  <span>Offen: <span class="text-warning">{{ count(allDataTickets, status[0]) }}</span></span>
+                </div>
+                <div class="h5 child h-100 text-center bg-primary col-12 col-lg-2 rounded">
+                    <span>Ausstehend: <span class="text-warning">{{ count(allDataTickets, status[1]) }}</span></span>
+                </div>
+                <div class="h5 child h-100 text-center bg-primary col-12 col-lg-2 rounded">
+                    <span>Gelöst: <span class="text-warning">{{ count(allDataTickets, status[2]) }}</span></span>
+                </div>
+                <div class="h5 child h-100 text-center bg-primary col-12 col-lg-2 rounded" >
+                    <span>Geschlossen: <span class="text-warning">{{ count(allDataTickets, status[3]) }}</span></span>
+                </div>
+                <div class="h5 child h-100 text-center bg-primary col-12 col-lg-2 rounded" >
+                    <span>Enhancement: <span class="text-warning">{{ count(allDataTickets, status[4]) }}</span></span>
+                </div>
+                <div class="h5 child h-100 text-center bg-primary col-12 col-lg-2 rounded" >
+                    <span>New: <span class="text-warning">{{ count(allDataTickets, status[5]) }}</span></span>
+                </div>
+
+            </div>
+
+
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

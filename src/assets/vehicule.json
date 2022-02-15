@@ -1,0 +1,230 @@
+[
+  {
+      "id": 1,
+
+      "batteryData": {
+        "id":10,
+        "voltage": 10,
+        "outputVoltage": 12
+      },
+      "module_1": {
+        "id":10,
+        "modulesn": 13243654,
+        "current": 5,
+        "soh": 0.5,
+        "soc": 0.4,
+        "temperature_senior": 12,
+        "temperature_uc": 10
+      },
+      "time": "2020-04-01T09:18:18Z"
+  },
+  
+  {
+    "id": 2,
+      "batteryData": {
+        "id":11,
+        "voltage": 20,
+        "outputVoltage": 12
+      },
+      "module_1": {
+        "id":11,
+        "modulesn": 13243654,
+        "current": 2,
+        "soh": 0.8,
+        "soc": 0.5,
+        "temperature_senior": 10,
+        "temperature_uc": 20
+      },
+      "time": "2020-04-01T09:18:18Z"
+  },
+  
+  {
+      "id": 3,
+      "batteryData": {
+        "id":13,
+        "voltage": 27,
+        "outputVoltage": 12
+      },
+      "module_1": {
+        "id":13,
+        "modulesn": 13243654,
+        "current": 2,
+        "soh": 0.8,
+        "soc": 0.5,
+        "temperature_senior": 10,
+        "temperature_uc": 20
+      },
+      "time": "2020-04-01T09:18:18Z"
+  },
+
+  {
+      "id": 4,
+      "batteryData": {
+        "id":14,
+        "voltage": 30,
+        "outputVoltage": 10
+      },
+      "module_1": {
+        "id":14,
+        "modulesn": 13243654,
+        "current": 2.5,
+        "soh": 0.5,
+        "soc": 0.8,
+        "temperature_senior": 12,
+        "temperature_uc": 10
+      },
+      "time":  "2020-04-01T09:18:18Z"
+  },
+  
+  {
+    "id": 5,
+      "batteryData": {
+        "id":15,
+        "voltage": 31,
+        "outputVoltage": 10
+      },
+      "module_1": {
+        "id":15,
+        "modulesn": 13243654,
+        "current": 5,
+        "soh": 0.6,
+        "soc": 0.9,
+        "temperature_senior": 11,
+        "temperature_uc": 10
+      },
+      "time": "2020-04-01T09:18:18Z"
+  },
+  
+  {
+    "id": 6,
+      "batteryData": {
+        "id":16,
+        "voltage": 33,
+        "outputVoltage": 11.8
+      },
+      "module_1": {
+        "id":16,
+        "modulesn": 13243654,
+        "current": 3,
+        "soh": 0.5,
+        "soc": 0.9,
+        "temperature_senior": 12,
+        "temperature_uc": 10
+      },
+      "time": "2020-04-01T09:18:18Z"
+  },
+  
+  {
+    "id": 7,
+      "batteryData": {
+        "id":17,
+        "voltage": 32,
+        "outputVoltage": 12
+      },
+      "module_1": {
+        "id":17,
+        "modulesn": 13243654,
+        "current": 7,
+        "soh": 0.5,
+        "soc": 0.8,
+        "temperature_senior": 10,
+        "temperature_uc": 12
+      },
+      "time": "2020-04-01T09:18:18Z"
+  },
+  
+  {
+    "id": 8,
+      "batteryData": {
+        "id":18,
+        "voltage": 36,
+        "outputVoltage": 12
+      },
+      "module_1": {
+        "id":18,
+        "modulesn": 13243654,
+        "current": 2,
+        "soh": 0.8,
+        "soc": 0.5,
+        "temperature_senior": 12,
+        "temperature_uc": 20
+      },
+      "time": "2020-04-01T09:18:18Z"
+  },
+  
+  {
+    "id": 9,
+      "batteryData": {
+        "id":19,
+        "voltage": 40,
+        "outputVoltage": 17
+      },
+      "module_1": {
+        "id":19,
+        "modulesn": 13243654,
+        "current": 2,
+        "soh": 0.8,
+        "soc": 0.5,
+        "temperature_senior": 12,
+        "temperature_uc": 20
+      },
+      "time": "2020-04-01T09:18:18Z"
+  },
+  
+  {
+    "id": 10,
+      "batteryData": {
+        "id":20,
+        "voltage": 39,
+        "outputVoltage": 16
+      },
+      "module_1": {
+        "id":20,
+        "modulesn": 13243654,
+        "current": 7,
+        "soh": 0.5,
+        "soc": 0.8,
+        "temperature_senior": 11,
+        "temperature_uc": 12
+      },
+      "time": "2020-04-01T09:18:18Z"
+  },
+  
+  {
+    "id": 11,
+      "batteryData": {
+        "id":21,
+        "voltage": 25,
+        "outputVoltage": 11.8
+      },
+      "module_1": {
+        "id":21,
+        "modulesn": 13243654,
+        "current": 2.5,
+        "soh": 0.5,
+        "soc": 0.8,
+        "temperature_senior": 12,
+        "temperature_uc": 10
+      },
+      "time": "2020-04-01T09:18:18Z"
+  },
+  
+  {
+    "id": 12,
+      "batteryData": {
+        "id":22,
+        "voltage": 37,
+        "outputVoltage": 15
+      },
+      "module_1": {
+        "id":22,
+        "modulesn": 13243654,
+        "current": 3,
+        "soh": 0.7,
+        "soc": 0.7,
+        "temperature_senior": 20,
+        "temperature_uc": 12
+      },
+      "time": "2020-04-01T09:18:18Z"
+  }
+]

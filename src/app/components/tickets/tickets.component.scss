@@ -1,0 +1,140 @@
+mat-toolbar {
+    background: #004a9f;
+    color: white;
+}
+
+mat-sidenav {
+    margin: 16px;
+    width: 200px;
+    border-right: none;
+    background: #002b5c;
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.content {
+    height: calc(100vh - 98px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    color: lightgray;
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 65px);
+}
+
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+
+    mat-icon {
+        margin-right: 8px;
+    }
+}
+
+.avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.name {
+    margin-top: 8px;
+    font-weight: normal;
+}
+
+.designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: lightgrey;
+}
+
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.col{
+    background: linear-gradient(to left, rgb(1, 72, 163), rgb(0, 88, 221));
+}
+#example-search-input{
+    border-radius: 10px;
+}
+.card-body>.row>button{
+    color: grey;
+    font-size: 16px;
+}
+
+
+.card2:hover{
+    
+    .card-body{
+        background-color: rgba(27, 80, 255, 0.13) !important;
+        display: block !important;
+        opacity: 1 !important;
+        transition: 1s;
+    }
+}
+.col-lg-3{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    .span1{
+        color: rgb(36, 36, 36);
+        font-weight: 400;
+        font-size: 13px;
+    }
+    .span2{
+        color: rgb(36, 36, 36);
+        font-weight: 500;
+        font-size: 14px;
+    }
+}
+.ticketLine:hover{
+    background: linear-gradient(to top, rgb(0, 110, 255), rgb(0, 136, 214));
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: 00.8s;
+    border: none;
+    cursor: pointer;
+    div{
+        .span2{
+            color: rgba(255, 255, 255) !important;
+            box-shadow: none !important;
+        }
+    }
+}
+#btn{
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 0 !important;
+    transition: 1s;
+    z-index: 100000;
+    span{
+        color: rgb(34, 34, 34);
+        font-size: 50px;
+        transition: 1s;
+    }
+
+    &:hover{
+        span{
+            color: rgb(255, 255, 255);
+            transition: 1s;
+        }
+        transition: 1s;
+    }
+}

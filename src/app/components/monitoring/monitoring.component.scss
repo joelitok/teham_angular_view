@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+.shadow{
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+.bas{
+    background-color: rgba(211, 211, 211, 0.219);
+    border: none !important;
+}
+#parent{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    overflow-y: auto;
+}
+textarea{
+    background-color: rgb(219, 242, 253);
+    border: 1px solid rgb(43, 43, 43);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3) inset;
+}
+.rectangle{
+    border: 2px solid black;
+}

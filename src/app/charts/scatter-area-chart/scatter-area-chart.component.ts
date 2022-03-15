@@ -3,7 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { map } from 'rxjs/operators';
-import { TicketsDataService } from 'src/app/tickets-data.service';
+import { DataService } from 'src/app/data.service';
+
 
 @Component({
   selector: 'app-scatter-area-chart',
@@ -32,19 +33,18 @@ export class ScatterAreaChartComponent implements OnInit {
     },
   ];
 
-  constructor(private dataService : TicketsDataService, private route: ActivatedRoute) { }
+  constructor(private dataService : DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-     this.serie_number = this.route.snapshot.paramMap.get('modulesn');
      this.getVoltage();
   }
 
   getVoltage(){
-    this.dataService.getSerieNumberGraphe(this.serie_number).pipe(
+    this.dataService.getJSON().pipe(
       map(value => {
         const serie = new Array<any>();
 
-        value.forEach((element: any) => {
+        value.body.data.forEach((element: any) => {
           if (element.data.module_1.modulesn == this.serie_number) {
             serie.push(element.data.module_1.soh);
           }

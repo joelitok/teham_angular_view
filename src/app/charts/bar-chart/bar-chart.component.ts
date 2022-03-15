@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { map } from 'rxjs/operators';
+import { DataService } from 'src/app/data.service';
 import { TicketsDataService } from 'src/app/tickets-data.service';
 
 @Component({
@@ -48,7 +49,7 @@ export class BarChartComponent implements OnInit {
   ];
 
 
-  constructor(private dataService : TicketsDataService, private route: ActivatedRoute) { }
+  constructor(private dataService : DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
 
@@ -61,11 +62,12 @@ export class BarChartComponent implements OnInit {
   }
 
   getVoltage(){
-    this.dataService.getSerieNumberGraphe(this.serie_number).pipe(
+    this.dataService.getJSON().pipe(
       map(value => {
+        console.log("value : " + value);
         const serie = new Array<any>();
         const serie2 = new Array<any>();
-        value.forEach((element: any) => {
+        value.body.data.forEach((element: any) => {
             serie.push(element.data.batteryData.voltage);
             serie2.push(element.data.module_1.current);
         });

@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'login', component: LogInComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'tickets', component: TicketsComponent },
-  { path: 'monitoring/:modulesn', component: MonitoringComponent },
+  { path: 'monitoring', component: MonitoringComponent },
   { path: 'charts', component: BarChartComponent }
 ];
 

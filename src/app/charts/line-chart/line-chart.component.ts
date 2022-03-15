@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { map } from 'rxjs/operators';
+import { DataService } from 'src/app/data.service';
 import { TicketsDataService } from 'src/app/tickets-data.service';
 
 @Component({
@@ -37,19 +38,18 @@ export class LineChartComponent implements OnInit {
   ];
 
 
-  constructor(private dataService : TicketsDataService, private route: ActivatedRoute) { }
+  constructor(private dataService : DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-     this.serie_number = this.route.snapshot.paramMap.get('modulesn');
      this.getVoltage();
   }
 
   getVoltage(){
-    this.dataService.getSerieNumberGraphe(this.serie_number).pipe(
+    this.dataService.getJSON().pipe(
       map(value => {
         const serie = new Array<any>();
 
-        value.forEach((element: any) => {
+        value.body.data.forEach((element: any) => {
             serie.push(element.data.module_1.soc);
         });
         return serie;

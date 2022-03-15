@@ -80,8 +80,8 @@
 
             <input type="submit" disabled class="h3 mx-4" [(value)]="trigger" style="color: rgb(36, 36, 36);font-size: 16px;background: transparent;border: none;" />
             
-            <div *ngFor="let item of myDataTickets(allDataTickets, trigger)">
-                <a href="/monitoring/{{ item?.custom_fields?.cf_seriennumer_device }}">
+            <div *ngFor="let item of data">
+                <div (click)="sendTicket(item?.custom_fields?.cf_seriennumer_device)">
                 <div class="h5 row p-2 mx-4 rounded ticketLine" style="border:1px solid rgb(173, 173, 173);">
                         <div class="col-lg-3">
                             <span class="span1">Trigger:</span>
@@ -111,12 +111,11 @@
                             </span>
                         </div>
                 </div>
-                </a>
+            </div>
             </div>
 
-
             <div class="container row w-100" style="display: flex;flex-direction: row;align-items: center;justify-content: space-between;">
-
+                
             </div>
         </div>
     </mat-sidenav-content>

@@ -3,6 +3,8 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { delay } from 'rxjs/operators';
 import { TicketsDataService } from 'src/app/tickets-data.service';
+import { TehamLib } from 'src/teham-lib';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-tickets',
@@ -17,16 +19,18 @@ export class TicketsComponent implements OnInit {
   trigger: any = "Alarm";
   allDataTickets: any[] = [];
 
-  constructor(private observer: BreakpointObserver, private dataService: TicketsDataService) { }
+  constructor(private observer: BreakpointObserver, private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.dataService.getJSONData().subscribe(data => {
-      this.data = data;
-     });
 
-     this.dataService.getJSONData().subscribe(data => {
-      this.allDataTickets = data;
-     });
+     this.dataService.getJSON().subscribe(response => {
+      this.data = response;
+      this.data = JSON.parse(response.body.data);
+
+      console.log("Mes data : " + this.data);
+     })
+
+
   }
 
   ngAfterViewInit() {
@@ -58,6 +62,15 @@ export class TicketsComponent implements OnInit {
 
   getValue(value: any){
     this.trigger = value;
+    /*TehamLib.send('onClick', {
+      "name": value
+    })*/
+  }
+
+  sendTicket(val: string){
+    TehamLib.send('onClick', {
+      "name": val
+    })
   }
 
   

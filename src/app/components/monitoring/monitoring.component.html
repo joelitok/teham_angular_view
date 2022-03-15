@@ -59,31 +59,25 @@
         
         <div class="row my-4" style="display: flex;justify-content: space-between;align-items: center;">
             <div class="col-lg-4 px-2 text-center py-3 rounded" style="height: auto;color: grey;">
-              <app-bar-chart *ngIf="present == 'oui'"></app-bar-chart>
-              <span>No Graphe Data found for the serial number: <span class="text-warning">{{serie_number}}</span></span>
+              <app-bar-chart></app-bar-chart>
             </div>
             <div class="col-lg-4 px-2 py-3 rounded" style="height: auto;">
-              <app-line-chart *ngIf="present == 'oui'" ></app-line-chart>
-              <span>No Graphe Data found for the serial number: <span class="text-warning">{{serie_number}}</span></span>
+              <app-line-chart></app-line-chart>
             </div>
             <div class="col-lg-4 px-2 py-3 rounded" style="height: auto;">
-              <app-pie-chart *ngIf="present == 'oui'" ></app-pie-chart>
-              <span>No Graphe Data found for the serial number: <span class="text-warning">{{serie_number}}</span></span>
+              <app-pie-chart></app-pie-chart>
             </div>
         </div>
     
         <div class="row" style="display: flex;justify-content: space-between;align-items: center;">
             <div class="col-lg-4 px-2 py-3 border-0 rounded" style="height: auto;">
-              <app-bubble-area-chart  *ngIf="present == 'oui'" class="w-50 h-50"></app-bubble-area-chart>
-              <span>No Graphe Data found for the serial number: <span class="text-warning">{{serie_number}}</span></span>
+              <app-bubble-area-chart class="w-50 h-50"></app-bubble-area-chart>
             </div>
             <div class="col-lg-4 px-2 py-3 border-0 rounded" style="height: auto;">
-              <app-scatter-area-chart *ngIf="present == 'oui'"></app-scatter-area-chart>
-              <span>No Graphe Data found for the serial number: <span class="text-warning">{{serie_number}}</span></span>
+              <app-scatter-area-chart></app-scatter-area-chart>
             </div>
             <div class="col-lg-4 px-2 py-3 border-0 rounded" style="height: auto;">
-              <app-doughnut-chart *ngIf="present == 'oui'"></app-doughnut-chart>
-              <span>No Graphe Data found for the serial number: <span class="text-warning">{{serie_number}}</span></span>
+              <app-doughnut-chart></app-doughnut-chart>
             </div>
         </div>
     

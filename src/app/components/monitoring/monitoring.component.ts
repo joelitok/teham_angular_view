@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TicketsDataService } from 'src/app/tickets-data.service';
 import { ActivatedRoute } from '@angular/router';
+import { TehamLib } from 'src/teham-lib';
+import { DataService } from 'src/app/data.service';
 
 
 @Component({
@@ -11,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class MonitoringComponent implements OnInit {
   serie_number: any;
   data: any;
+  data2: any;
   today = new Date();
   times!: string[];
   status!: string[];
@@ -18,26 +21,18 @@ export class MonitoringComponent implements OnInit {
   present!: string;
 
 
-  constructor(private dataService: TicketsDataService, private route: ActivatedRoute) { }
+  constructor(private dataService: DataService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.serie_number = this.route.snapshot.paramMap.get('modulesn');
 
-     this.dataService.getJSONData().subscribe(data => {
-      this.allDataTickets = data;
-     });
 
-     this.getOne();
-
-     this.times = this.dataService.times;
-
-     this.status = this.dataService.status;
   }
 
   myDataTickets(data: Array<any>, key: number){
     return data.filter((val) => val.custom_fields.cf_seriennumer_device == key);
   }
 
+  /*
   getOne(){
     this.dataService.getSerieNumberGraphe(this.serie_number).subscribe(response =>{
       if (response[0].data.module_1.modulesn == this.serie_number) {
@@ -46,7 +41,6 @@ export class MonitoringComponent implements OnInit {
         this.present = 'non';
       }
     })
-  }
-
+  }*/
 
 }

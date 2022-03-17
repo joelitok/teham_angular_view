@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
   constructor(private dataService: DataService, private router: Router) {}
 
   ngOnInit(): void {
-    this.teham.connect('http://192.168.100.7:8080/start', 'freshdesk.xml');
+    this.teham.connect('http://localhost:8081/start', 'freshdesk.xml');
     this.teham.subscribe(evt => {
       this.dataService.setJSON(evt.data);
       this.router.navigateByUrl(evt.name);
